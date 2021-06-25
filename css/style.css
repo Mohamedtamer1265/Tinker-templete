@@ -98,13 +98,13 @@ ul {
     justify-content: flex-end;
     align-items: center;
     position: relative;
+    flex-wrap: wrap;
 }
 .header .container .nav nav .device{
     color: var(--second-color);
 }
 .header .container .nav nav ul {
     display: flex;
-    flex-direction: row;
 }
 .header .container .nav nav ul li:not(:last-child){
     padding-right: 30px;
@@ -150,21 +150,27 @@ ul {
 }
   /* responsive */
   @media (max-width:767px) {
-    .header .container .nav nav .device.device:hover + ul{
-        display: flex;
-        flex-direction: column;
+      nav{
+          width: 100%;
+      } 
+    .ul{
         position: absolute;
-        top: 50%;
-        right: 0;
-        background-color: var(--second-color);
-        opacity: 90%;
-
+        top: 20px;
+        flex-direction: column;
+        background-color: #eff7fa;
+        height: 0;
+        overflow: hidden;
+        transition: 0.3s linear;
+        padding: 0;
     }
-    .header .container .nav nav .device.device:hover + ul li a {
-        color: black;
+    .ul-show{
+        height: 143px;
     }
-    .header .container .nav nav ul {
-        display: none;
+    .header .container .nav nav ul li{
+        padding: 5px;
+    }
+    .header .container .nav nav ul li a {
+        color: var(--main-color);
     }
 }
 @media (min-width:768px){
